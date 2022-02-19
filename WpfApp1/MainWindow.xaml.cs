@@ -20,8 +20,8 @@ namespace WpfApp1
                 StreamReader file = new StreamReader("students.txt");
                 while ((line = file.ReadLine()) != null)
                 {
-                    string[] arr = line.Split();
-                    Student student = new Student();
+                    var arr = line.Split();
+                    var student = new Student();
                     student.FirstName = arr[0];
                     student.LastName = arr[1];
                     student.Course = arr[2];
@@ -60,7 +60,7 @@ namespace WpfApp1
 
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            Student student = new Student();
+            var student = new Student();
             student.FirstName = this.FirstName.Text;
             student.LastName = this.LastName.Text;
             student.Course = this.Course.Text;
@@ -78,8 +78,8 @@ namespace WpfApp1
 
         private void SaveGrid()
         {
-            using (System.IO.StreamWriter file =
-                new System.IO.StreamWriter("students.txt"))
+            using (StreamWriter file =
+                new StreamWriter("students.txt"))
             {
                 foreach (Student student in students)
                 {
