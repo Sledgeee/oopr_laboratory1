@@ -11,6 +11,5 @@
         public int EngGrade { get; set; }
         public int PhysGrade { get; set; }
         public float MidGrade { get; set; }
-
     }
 }
